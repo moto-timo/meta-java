@@ -11,12 +11,14 @@ PACKAGE_ARCH = "${TUNE_PKGARCH}"
 inherit java-library
 
 SRC_URI = "\
-	https://github.com/downloads/mozilla/rhino/rhino1_7R4.zip \
+	https://github.com/mozilla/rhino/releases/download/Rhino1_7R5_RELEASE/rhino1_7R5.zip \
 	file://rhino \
 	file://rhino-jsc \
 	"
 
-S = "${WORKDIR}/rhino1_7R4"
+SRC_URI[sha256sum] = "e3efc88af053fbc0c495e0f14f866ce8df06004561e4d93b575f5dc615550156"
+
+S = "${WORKDIR}/rhino1_7R5"
 
 PACKAGES = "${JPN} rhino"
 
@@ -46,5 +48,3 @@ do_install:append() {
 	install -m 0755 ${WORKDIR}/rhino-jsc ${D}${bindir}
 }
 
-SRC_URI[md5sum] = "ad67a3dff135e3a70f0c3528a2d6edf2"
-SRC_URI[sha256sum] = "9eb08f85bbe7c8e0b9eaffb1cf4984b31fb679f3c8a682acc3bb8ac20626c61e"
