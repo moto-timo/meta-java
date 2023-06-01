@@ -332,10 +332,10 @@ BUILD_DIR_ECJ = "openjdk.build-ecj"
 # Force arm mode for now
 ARM_INSTRUCTION_SET:armv4t = "ARM"
 
-ICEDTEA_URI = "http://icedtea.wildebeest.org/download/source/${ICEDTEA}.tar.gz;name=iced"
+ICEDTEA_URI = "https://icedtea.classpath.org/download/source/${ICEDTEA}.tar.xz;name=iced"
 
 ICEDTEA_MAJOR = "icedtea7"
-ICEDTEA_DROP_URL = "http://icedtea.classpath.org/download/drops/${ICEDTEA_MAJOR}/${ICEDTEA_VERSION}"
+ICEDTEA_DROP_URL = "https://icedtea.classpath.org/download/drops/${ICEDTEA_MAJOR}/${ICEDTEA_VERSION}"
 
 OPENJDK_FILE = "openjdk.tar.bz2"
 OPENJDK_URI = "${ICEDTEA_DROP_URL}/${OPENJDK_FILE};name=openjdk;unpack=false"
