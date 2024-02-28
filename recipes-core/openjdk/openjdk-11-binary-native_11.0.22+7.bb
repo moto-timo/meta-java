@@ -68,9 +68,16 @@ INSANE_SKIP:${PN}:append = " dev-so"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 do_install() {
-    cp -R ${S}/* ${D}/
+    install -d ${D}${bindir} ${D}${libdir} ${D}${includedir}
+    cp --preserve=mode,timestamps -R ${S}/bin/* ${D}${bindir}/
+    cp --preserve=mode,timestamps -R ${S}/lib/* ${D}${libdir}/
+    cp -R ${S}/include/* ${D}${includedir}/
+    install -d ${D}${base_libdir}/jvm/java-11-openjdk-amd64
+    cp -R ${S}/* ${D}${base_libdir}/jvm/java-11-openjdk-amd64/
+    ln -sf ${D}${base_libdir}/jvm/java-11-openjdk-amd64/bin/java ${D}${bindir}/java
+    ln -sf ${D}${base_libdir}/jvm/java-11-openjdk-amd64/bin/javac ${D}${bindir}/javac
 }
 
-RPROVIDES:${PN} = "java"
+RPROVIDES:${PN} = "java javac"
 
 inherit native
