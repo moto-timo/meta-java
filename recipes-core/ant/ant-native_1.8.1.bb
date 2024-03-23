@@ -3,7 +3,6 @@ AUTHOR = "Apache Software Foundation"
 HOMEPAGE = "http://ant.apache.org"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=503bb72c4dd62dd216d6820d5b869442"
-PR = "r1"
 
 SRC_URI = "http://archive.apache.org/dist/ant/source/apache-ant-${PV}-src.tar.gz \
 	   file://ant \
@@ -14,11 +13,23 @@ S = "${WORKDIR}/apache-ant-${PV}"
 inherit java-library native
 
 DEPENDS = " \
-	jsch-native bsf-native xalan-j-native xerces-j-native \
-	xml-commons-resolver1.1-native gnumail-native gnujaf-native \
-	bcel-native regexp-native log4j1.2-native antlr-native oro-native \
-	junit-native jdepend-native commons-net-native commons-logging-native \
-	"
+    antlr-native \
+    bcel-native \
+    bsf-native \
+    commons-logging-native \
+    commons-net-native \
+    gnujaf-native \
+    gnumail-native \
+    jdepend-native \
+    jsch-native \
+    junit-native \
+    log4j1.2-native \
+    oro-native \
+    regexp-native \
+    xalan-j-native \
+    xerces-j-native \
+    xml-commons-resolver1.1-native \
+"
 
 do_deletecruft() {
 	# Removes thing that need proprietary Jar files or are otherwise problematic
