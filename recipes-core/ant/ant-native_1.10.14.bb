@@ -1,12 +1,15 @@
 SUMMARY = "Another Neat Tool - build system for Java"
 AUTHOR = "Apache Software Foundation"
 HOMEPAGE = "http://ant.apache.org"
-LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=503bb72c4dd62dd216d6820d5b869442"
+LICENSE = "Apache-2.0 & SAX-PD-2.0"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=7cd02ed04f28a0d9ca0e13d9431b8367"
 
-SRC_URI = "http://archive.apache.org/dist/ant/source/apache-ant-${PV}-src.tar.gz \
-	   file://ant \
-	  "
+SRC_URI = "\
+    https://dlcdn.apache.org//ant/source/apache-ant-${PV}-src.tar.xz \
+    file://ant \
+"
+
+SRC_URI[sha512sum] = "52936dfceb808a11dc842d2dc957a031508689270b59a2a6e3589f40465f6fa1aae87b189737cdd83eadfaf41b0c3f1ba2579bbd07591153107a5a27422521bd"
 
 S = "${WORKDIR}/apache-ant-${PV}"
 
@@ -32,7 +35,7 @@ DEPENDS = " \
 "
 
 do_deletecruft() {
-	# Removes thing that need proprietary Jar files or are otherwise problematic
+	# Removes things that need proprietary Jar files or are otherwise problematic
 	rm -rf ${S}/src/main/org/apache/tools/ant/taskdefs/optional/image
 	rm -rf ${S}/src/main/org/apache/tools/ant/types/optional/image
 	rm -rf ${S}/src/main/org/apache/tools/ant/taskdefs/optional/ejb
@@ -72,7 +75,4 @@ do_install:append() {
 	install -d ${D}${bindir}
 	install -m 0755 ${WORKDIR}/ant ${D}${bindir}
 }
-
-SRC_URI[md5sum] = "9e5960bd586d9425c46199cdd20a6fbc"
-SRC_URI[sha256sum] = "4f39057af228663c3cfb6dcfbee603a071a7e3cf48c95c30869ed81c5fcf21c8"
 
