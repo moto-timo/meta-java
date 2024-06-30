@@ -1,10 +1,10 @@
-require icedtea7-native-2.7.0.inc
+require icedtea7-native-2.6.28.inc
 
 PR = "${INC_PR}.0"
 
 ICEDTEA = "icedtea-${PV}"
 
-SRC_URI[iced.sha256sum] = "1929e57eb6718d30735e1e04e9e129457f845f7d7a8404b2b028740d0779ddb6"
+SRC_URI[iced.sha256sum] = "b42fc48d530b513455112492b219f461793499978b1f9722f73a1a5dcac7ce11"
 
 #HOTSPOT_CHANGESET = "a456d0771ba0"
 #SRC_URI[hotspot.sha256sum] = "69719a9657b15e6bef1bef137a15d830293091fbc46616fe8759e863ba904442"
