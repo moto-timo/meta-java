@@ -18,6 +18,9 @@ PACKAGECONFIG[x11] = ",--disable-headful,libx11-native xorgproto-native libxt-na
 OEMAKE_BUILD_HEADLESS_ONLY = "${@bb.utils.contains('PACKAGECONFIG', 'x11', '', 'BUILD_HEADLESS_ONLY=1', d)}"
 CFLAGS:append = "${@bb.utils.contains('PACKAGECONFIG', 'x11', '', ' -DHEADLESS=true', d)}"
 
+# https://lore.kernel.org/all/CAMRc=Mf9rbSTNHrx7SLJv-ZX1_ePSA65e-+o_an4NoNmtmZ0tQ@mail.gmail.com/T/
+EXTRA_OEMAKE:append = " LDD=:"
+
 # Disable dead store elimination and set C++ standard to C++98.
 # There are dead stores in the JVM that would be pretty hard to
 # remove, so disable the optimisation in the compiler.
