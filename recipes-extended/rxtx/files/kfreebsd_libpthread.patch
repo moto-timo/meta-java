@@ -2,6 +2,8 @@ Description: libc_r is not available, use libpthread
 Bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=585089
 Author: Scott Howard <showard@debian.org>
 
+Upstream-Status: Pending
+
 Index: rxtx/configure.in
 ===================================================================
 --- rxtx.orig/configure.in	2011-02-06 11:13:16.151426139 -0500
