@@ -54,12 +54,12 @@ do_compile() {
 
   oe_makeclasspath cp -s ecj-bootstrap jsch bsf xalan2 xercesImpl resolver gnumail gnujaf bcel regexp log4j1.2 antlr oro junit jdepend commons-net commons-logging
   cp=${STAGING_DATADIR_JAVA_NATIVE}/ant.jar:${STAGING_DATADIR}/classpath/tools.zip:$cp
-  sed -i -e"s|@JAR_FILE@|$cp|" ${WORKDIR}/ant
+  sed -i -e"s|@JAR_FILE@|$cp|" ${UNPACKDIR}/ant
 }
 
 do_install:append() {
 	install -d ${D}${bindir}
-	install -m 0755 ${WORKDIR}/ant ${D}${bindir}
+	install -m 0755 ${UNPACKDIR}/ant ${D}${bindir}
 }
 
 SRC_URI[md5sum] = "9e5960bd586d9425c46199cdd20a6fbc"
