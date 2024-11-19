@@ -16,14 +16,14 @@ SRC_URI = "http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/${PV}/Mai
            file://jlex \
           "
 
-S = "${WORKDIR}/${BPN}"
+S = "${WORKDIR}/sources-unpack"
 
 do_configure() {
   sed -i \
     -e "s|OE_STAGING_BINDIR|${bindir}|" \
     -e "s|OE_STAGING_DATADIR_JAVA|${datadir_java}|" \
     -e "s|OE_JLEX_JAR|${BP}.jar|" \
-    ${WORKDIR}/jlex
+    ${S}/jlex
 }
 
 do_compile() {
