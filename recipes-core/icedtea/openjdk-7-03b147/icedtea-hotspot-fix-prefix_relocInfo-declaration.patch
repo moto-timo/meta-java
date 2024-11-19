@@ -1,3 +1,5 @@
+Upstream-Status: Pending
+
 --- openjdk/hotspot/src/share/vm/code/relocInfo.hpp
 +++ openjdk/hotspot/src/share/vm/code/relocInfo.hpp
 @@ -371,7 +371,7 @@
