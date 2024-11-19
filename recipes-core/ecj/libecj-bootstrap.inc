@@ -11,7 +11,7 @@ INC_PR = "r5"
 
 inherit java native
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources-unpack"
 
 JAR = "ecj-bootstrap-${PV}.jar"
 
