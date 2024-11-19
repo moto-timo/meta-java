@@ -1,3 +1,5 @@
+Upstream-Status: Pending
+
 --- openjdk/jdk/make/java/nio/Makefile
 +++ openjdk/jdk/make/java/nio/Makefile
 @@ -961,7 +961,7 @@
