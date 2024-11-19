@@ -6,6 +6,8 @@
 # Parent  a456d0771ba0f6604b172f05f0b594178f7cc49c
 Handle format-overflow warning for GCC >= 7
 
+Upstream-Status: Pending
+
 diff --git openjdk/hotspot/src/share/vm/adlc/output_c.cpp openjdk/hotspot/src/share/vm/adlc/output_c.cpp
 --- openjdk/hotspot/src/share/vm/adlc/output_c.cpp
 +++ openjdk/hotspot/src/share/vm/adlc/output_c.cpp
