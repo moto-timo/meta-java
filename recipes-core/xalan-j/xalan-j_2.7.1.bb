@@ -1,8 +1,8 @@
 SUMMARY = "Java XSLT processor"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = " \
-                    file://${WORKDIR}/bsf-2.4.0/LICENSE.txt;md5=b1e01b26bacfc2232046c90a330332b3 \
-                    file://${WORKDIR}/xalan-j_2_7_1/LICENSE.txt;md5=f4411652c74c374bb2564394185289ee \
+                    file://${UNPACKDIR}/bsf-2.4.0/LICENSE.txt;md5=b1e01b26bacfc2232046c90a330332b3 \
+                    file://${S}/LICENSE.txt;md5=f4411652c74c374bb2564394185289ee \
                    "
 AUTHOR = "Apache Software Foundation"
 HOMEPAGE = "http://xml.apache.org/xalan-j"
