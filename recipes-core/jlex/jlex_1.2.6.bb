@@ -12,18 +12,18 @@ RDEPENDS:${PN}:class-native = ""
 
 inherit java-library
 
-SRC_URI = "http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/${PV}/Main.java;downloadfilename=${JLEX_MAIN_FILENAME} \
-           file://jlex \
-          "
+SRC_URI = "https://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/${PV}/Main.java;downloadfilename=${JLEX_MAIN_FILENAME}"
 
 S = "${WORKDIR}/${BPN}"
 
 do_configure() {
-  sed -i \
-    -e "s|OE_STAGING_BINDIR|${bindir}|" \
-    -e "s|OE_STAGING_DATADIR_JAVA|${datadir_java}|" \
-    -e "s|OE_JLEX_JAR|${BP}.jar|" \
-    ${WORKDIR}/jlex
+cat > ${B}/jlex << EOF
+#!/bin/sh
+
+cp=${datadir_java}/${BP}.jar
+
+exec ${bindir}/java -cp $cp JLex.Main "$@"
+EOF
 }
 
 do_compile() {
@@ -37,7 +37,7 @@ do_compile() {
 
 do_install:append() {
 	install -d ${D}${bindir}
-	install -m 0755 jlex ${D}${bindir}/
+	install -m 0755 ${B}/jlex ${D}${bindir}/
 }
 
 PACKAGES = "${PN}"
