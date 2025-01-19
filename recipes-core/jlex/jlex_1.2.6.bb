@@ -3,7 +3,7 @@ AUTHOR = "Elliot Berk, A. Appel, C. Scott Ananian"
 
 JLEX_MAIN_FILENAME = "jlex-${PV}-Main.java"
 LICENSE = "JLEX"
-LIC_FILES_CHKSUM = "file://${S}/${JLEX_MAIN_FILENAME};beginline=148;endline=166;md5=9bf4a6a951053991db64f9d7330d648a"
+LIC_FILES_CHKSUM = "file://${UNPACKDIR}/${JLEX_MAIN_FILENAME};beginline=148;endline=166;md5=9bf4a6a951053991db64f9d7330d648a"
 
 PACKAGE_ARCH = "${TUNE_PKGARCH}"
 
