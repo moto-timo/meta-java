@@ -28,7 +28,7 @@ EOF
 
 do_compile() {
 	mkdir -p build
-	cp ${JLEX_MAIN_FILENAME} Main.java
+	cp ${UNPACKDIR}/${JLEX_MAIN_FILENAME} Main.java
 
 	javac -d build Main.java
 
