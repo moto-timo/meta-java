@@ -102,7 +102,8 @@ OPENJDK_HG_U = "jdk8u"
 # https://mail.openjdk.java.net/pipermail/aarch64-port-dev/2018-August/006265.html
 OPENJDK_HG_U:aarch64 = "jdk8u-shenandoah"
 
-OPENJDK_HG_URL = "https://hg.openjdk.java.net/${OPENJDK_ARCH_PORT}/${OPENJDK_HG_U}"
+FETCHCMD_wget="/usr/bin/env wget -t 2 -T 100 --user-agent='Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'"
+OPENJDK_HG_URL = "https://hg.openjdk.org/${OPENJDK_ARCH_PORT}/${OPENJDK_HG_U}"
 
 OPENJDK_FILE = "${OPENJDK_CHANGESET}.tar.bz2"
 OPENJDK_FILE_LOCAL = "openjdk8-${PV}-jdk8u-${OPENJDK_FILE}"
