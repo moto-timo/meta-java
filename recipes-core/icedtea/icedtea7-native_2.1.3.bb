@@ -34,3 +34,7 @@ SRC_URI[langtools.sha256sum] = "10fee41a0cdd1b166ff78e6426430c76af0f2358d026c181
 OPENJDK_CHANGESET = "f89009ada191"
 SRC_URI[openjdk.md5sum] = "2bc941373ca4b033c9a25f972eec7858"
 SRC_URI[openjdk.sha256sum] = "5efd8e66f18fcbf45527bcc74aa3e6ed11f66bc793c88e3841925c4acb4827ba"
+
+FILESEXTRAPATHS:prepend := "${THISDIR}/openjdk/patches-openjdk-7:"
+OPENJDK_PATCHES += "file://0001-fix-gcc14-compatibility.patch;apply=no;subdir=icedtea-2.1.3;striplevel=0"
+DISTRIBUTION_PATCHES += "0001-fix-gcc14-compatibility.patch"
