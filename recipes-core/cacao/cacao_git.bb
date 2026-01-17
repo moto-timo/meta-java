@@ -15,7 +15,6 @@ SRC_URI = "git://bitbucket.org/cacaovm/cacao.git;protocol=https;branch=master \
            file://0001-java.in-Do-not-use-hardcode-paths.patch \
            file://0002-cacao-use-system-s-boehm-garbage-collector.patch \
 "
-S = "${WORKDIR}/git"
 
 inherit java autotools-brokensep update-alternatives pkgconfig features_check
 
