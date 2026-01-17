@@ -16,7 +16,7 @@ SRC_URI = "http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/${PV}/Mai
            file://jlex \
           "
 
-S = "${WORKDIR}/sources-unpack"
+S = "${UNPACKDIR}/sources-unpack"
 
 do_configure() {
   sed -i \
