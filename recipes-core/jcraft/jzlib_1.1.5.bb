@@ -1,10 +1,10 @@
 SUMMARY = "zlib implementation in Java"
 LICENSE = "BSD-3-Clause"
-LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=a2b2e5b95bf768dd5c4ca097c9cde9e9"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=5726f2e9799112bcdb199b9c7233b454"
 
 HOMEPAGE = "http://www.jcraft.com/jzlib"
 
-SRC_URI = "http://www.jcraft.com/jzlib/jzlib-${PV}.tar.gz"
+SRC_URI = "git://github.com/ymnk/jzlib;protocol=https;branch=master"
 
 inherit java-library
 
@@ -16,8 +16,7 @@ do_compile() {
   fastjar cf ${JARFILENAME} -C build .
 }
 
-SRC_URI[md5sum] = "3c52a0afb970e8a1fb2d34f30d330a83"
-SRC_URI[sha256sum] = "20923a3f771a14c58c8cddfff2b589d568aff09f8a931919dc63ddaabb32407a"
+SRCREV = "9d0fcb95caad5f205d849928087b2efa202be4d4"
 
 BBCLASSEXTEND = "native"
 
