@@ -12,7 +12,7 @@ SRC_URI = "http://ftp.gnu.org/gnu/classpathx/activation-${PV}.tar.gz \
 
 inherit java-library
 
-S = "${WORKDIR}/activation-${PV}"
+S = "${UNPACKDIR}/activation-${PV}"
 
 export JAVAC = "javac"
 
