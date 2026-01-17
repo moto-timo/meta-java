@@ -31,7 +31,9 @@ CXXFLAGS:append = " -std=gnu++98 -fno-tree-dse"
 CFLAGS:append = " -Wno-error=stringop-overflow -Wno-error=return-type"
 
 # oe.utils.get_host_compiler_version returns "gcc, 9.2" and we want -> "9"
-HOST_COMPILER_MAJOR="${@oe.utils.get_host_compiler_version(d)[1].split(".", 2)[0]}"
+# oe.utils.get_host_compiler_version changed to get_host_gcc_version in:
+# https://git.openembedded.org/openembedded-core/commit/meta/lib/oe/utils.py?id=0a165a93693a293f08cb0d7e2dfa1016803a917a
+HOST_COMPILER_MAJOR="${@oe.utils.get_host_gcc_version(d)[1].split(".", 2)[0]}"
 CFLAGS:append = " ${@oe.utils.less_or_equal('HOST_COMPILER_MAJOR', '8', '', ' -Wno-error=format-overflow', d)}"
 
 # Explicitly pass -fcommon since GCC 10 defaults to -fno-common for C sources
