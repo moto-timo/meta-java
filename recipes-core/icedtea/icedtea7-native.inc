@@ -64,7 +64,7 @@ SRC_URI = " \
   file://vframeArray_Fix_sigsegv.patch;apply=no \
   "
 
-S = "${WORKDIR}/${ICEDTEA}"
+S = "${UNPACKDIR}/${ICEDTEA}"
 B = "${S}/build"
 
 # openjdk looks in /usr/include and /usr/lib for freetype by default.
