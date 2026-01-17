@@ -13,7 +13,7 @@ SRC_URI = "https://downloads.sourceforge.net/tcljava/jacl${PV}.tar.gz"
 
 inherit java-library
 
-S = "${WORKDIR}/jacl${PV}"
+S = "${UNPACKDIR}/jacl${PV}"
 
 do_compile() {
   mkdir -p build
