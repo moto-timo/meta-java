@@ -8,7 +8,7 @@ SRC_URI = "http://archive.apache.org/dist/tomcat/tomcat-4/v${PV}/src/apache-tomc
 
 inherit java-library
 
-S = "${WORKDIR}/apache-tomcat-${PV}-src/servletapi"
+S = "${UNPACKDIR}/apache-tomcat-${PV}-src/servletapi"
 
 DEPENDS = "fastjar-native"
 
