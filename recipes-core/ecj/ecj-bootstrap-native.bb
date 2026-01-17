@@ -10,15 +10,13 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302 \
                     file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420 \
                    "
-PR = "r1"
+PR = "r2"
 
 DEPENDS = "libecj-bootstrap-native virtual/java-native"
 
 PROVIDES = "virtual/javac-native"
 
 SRC_URI = "file://ecj.in"
-
-S = "${WORKDIR}/sources-unpack"
 
 JAR = "ecj-bootstrap.jar"
 
@@ -35,11 +33,11 @@ do_compile() {
 
   echo "ECJ_JAR=\${PARENT_DIR}/share/java/${JAR}" >> ecj-bootstrap
   echo "RUNTIME=java" >> ecj-bootstrap
-  cat ecj.in >> ecj-bootstrap
+  cat ${UNPACKDIR}/ecj.in >> ${UNPACKDIR}/ecj-bootstrap
 }
 
 do_install() {
   install -d ${D}${bindir}
-  install -m 755 ${S}/ecj-bootstrap ${D}${bindir}
-  install -m 755 ${S}/ecj-bootstrap ${D}${bindir}/javac
+  install -m 755 ${UNPACKDIR}/ecj-bootstrap ${D}${bindir}
+  install -m 755 ${UNPACKDIR}/ecj-bootstrap ${D}${bindir}/javac
 }
