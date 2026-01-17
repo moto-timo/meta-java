@@ -16,7 +16,7 @@ SRC_URI = "\
 	https://dlcdn.apache.org/commons/bsf/source/bsf-src-2.4.0.tar.gz;name=bsf \
 	"
 
-S = "${WORKDIR}/${BPN}_2_7_1"
+S = "${UNPACKDIR}/${BPN}_2_7_1"
 
 PACKAGE_ARCH = "${TUNE_PKGARCH}"
 
