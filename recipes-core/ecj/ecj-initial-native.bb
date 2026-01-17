@@ -12,7 +12,7 @@ DEPENDS = "libecj-bootstrap-native"
 
 SRC_URI = "file://ecj-initial.in"
 
-S = "${WORKDIR}/sources-unpack"
+S = "${UNPACKDIR}/sources-unpack"
 
 inherit native
 
@@ -29,7 +29,7 @@ do_compile() {
 
   echo "ECJ_JAR=\${PARENT_DIR}/share/java/${JAR}" >> ecj-initial
   echo "RUNTIME=java-initial" >> ecj-initial
-  cat ecj-initial.in >> ecj-initial
+  cat ${UNPACKDIR}/ecj-initial.in >> ecj-initial
 }
 
 
