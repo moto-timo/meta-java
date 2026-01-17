@@ -9,7 +9,7 @@ PROVIDES = "virtual/java-initial-native"
 
 PR = "r1"
 
-S = "${WORKDIR}/jamvm-${PV}"
+S = "${UNPACKDIR}/jamvm-${PV}"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/jamvm/jamvm-${PV}.tar.gz \
            file://libffi.patch \
@@ -40,7 +40,7 @@ EXTRA_OEMAKE = "JAVAC=${STAGING_BINDIR_NATIVE}/jikes-initial \
                "
 do_install:append() {
   install -d ${D}${bindir}/
-  install -m 0755 ${WORKDIR}/java-initial ${D}${bindir}/
+  install -m 0755 ${UNPACKDIR}/java-initial ${D}${bindir}/
 }
 
 SRC_URI[md5sum] = "3f538bab6e1c77aed331e5e71f754f5b"
