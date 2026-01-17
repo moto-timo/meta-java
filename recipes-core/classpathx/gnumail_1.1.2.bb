@@ -11,7 +11,7 @@ SRC_URI = "http://ftp.gnu.org/gnu/classpathx/mail-${PV}.tar.gz \
 
 inherit java-library autotools
 
-S = "${WORKDIR}/mail-${PV}"
+S = "${UNPACKDIR}/mail-${PV}"
 
 DEPENDS += "gnujaf inetlib"
 
