@@ -7,7 +7,7 @@ INC_PR = "r0"
 
 inherit java-library
 
-S = "${WORKDIR}/${BP}-src"
+S = "${UNPACKDIR}/${BP}-src"
 
 # Directory in which the projects sources are located.
 MAINSOURCES = "src/java"
